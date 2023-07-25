@@ -1,9 +1,9 @@
-import WeatherList from "./WeatherList";
+import WeatherCard from "./WeatherCard";
 
 function App() {
   return (
     <>
-      <WeatherList />
+      <WeatherCard />
     </>
   );
 }

@@ -1,5 +1,5 @@
 export const getWeather = async () => {
-  const response = await fetch(`http://localhost:3001/api/weather/92128`).then(
+  const response = await fetch(`http://localhost:3001/api/weather/today/Poway`).then(
     (data) => data.json()
   );
   const potato = response.currentWeather.main;
