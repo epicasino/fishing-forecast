@@ -1,6 +1,6 @@
-import CurrentWeatherCard from "./CurrentWeatherCard";
+import CurrentWeatherCard from "./weather/CurrentWeatherCard";
 import { Route, Routes } from "react-router-dom";
-import TideList from "./TideList";
+import TideList from "./tides/TideList";
 
 function App() {
   return (

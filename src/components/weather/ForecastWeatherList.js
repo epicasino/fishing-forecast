@@ -1,5 +1,5 @@
 import React from "react";
-import useForecastWeather from "../hooks/useForecastWeather";
+import useForecastWeather from "../../hooks/useForecastWeather";
 import ForecastWeatherItem from "./ForecastWeatherItem";
 
 export default function ForeCastWeatherList() {
@@ -29,7 +29,7 @@ export default function ForeCastWeatherList() {
       <h1 style={forecastStyles.header}>Weather Forecast</h1>
       <div style={forecastStyles.wrapper}>
         {weather.weatherForecast.map((day) => (
-          <ForecastWeatherItem key={day.time} props={day}/>
+          <ForecastWeatherItem key={day.time} props={day} />
         ))}
       </div>
     </div>

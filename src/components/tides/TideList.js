@@ -1,7 +1,7 @@
 import React from "react";
-import useTide from "../hooks/useTide";
+import useTide from "../../hooks/useTide";
 import TideItem from "./TideItem";
-import Navbar from "./Navbar";
+import Navbar from "../Navbar";
 
 export default function TideList() {
   const { tides, loading } = useTide();
@@ -25,7 +25,7 @@ export default function TideList() {
 
   return (
     <>
-      <Navbar />
+      <Navbar props={{ href: "/", text: "Weather" }} />
       <div className="tideContainer">
         <h1 style={tideStyles.header}>Current Tides</h1>
         <div style={tideStyles.wrapper}>
