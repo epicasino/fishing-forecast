@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
-import { getWeather } from "../services/getWeather";
+import { getForecastWeather } from "../services/getWeather";
 
-export default function useWeather() {
+export default function useCurrentWeather() {
   const [weather, setWeather] = useState(null);
 
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    getWeather()
+    getForecastWeather()
       .then((data) => setWeather(data))
       .finally(() => setLoading(false));
   }, []);

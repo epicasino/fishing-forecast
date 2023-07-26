@@ -1,16 +1,13 @@
-import React from 'react'
+import React from "react";
 
 export default function WeatherItem({ mango }) {
-
   return (
     <>
-      <ul>
-        <li>Temp: {mango.temp}</li>
-        <li>Feels Like: {mango.feelsLike}</li>
-        <li>Min Temp: {mango.tempMin}</li>
-        <li>Max Temp: {mango.tempMax}</li>
-        <li>Humidity: {mango.humidity}</li>
-      </ul>
+      <h5>Temp: {mango.temp} °F</h5>
+      <h5>Feels Like: {mango.feelsLike} °F</h5>
+      <h5>Min Temp: {mango.tempMin} °F</h5>
+      <h5>Max Temp: {mango.tempMax} °F</h5>
+      <h5>Humidity: {mango.humidity} %</h5>
     </>
   );
 }

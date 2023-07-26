@@ -1,11 +1,16 @@
-import Navbar from "./Navbar";
-import WeatherCard from "./WeatherCard";
+import CurrentWeatherCard from "./CurrentWeatherCard";
+import { Route, Routes } from "react-router-dom";
+import TideList from "./TideList";
 
 function App() {
   return (
     <>
-      <Navbar />
-      <WeatherCard />
+      <Routes>
+        <Route exact path="/" element={<CurrentWeatherCard />}></Route>
+      </Routes>
+      <Routes>
+        <Route exact path="/tides" element={<TideList />}></Route>
+      </Routes>
     </>
   );
 }
