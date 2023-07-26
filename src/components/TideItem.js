@@ -1,13 +1,14 @@
 import React from 'react'
 
-export default function TideItem({ pear }) {
+export default function TideItem({ tide }) {
+
+  const date = new Date(tide.t).toLocaleString();
+
   return (
-    <>
     <ul>
-      <li>{pear[0].t}</li>
-      <li>{pear[0].v}</li>
-      <li>{pear[0].type}</li>
+      <li>{date}</li>
+      <li>{tide.v}</li>
+      <li>{tide.type}</li>
     </ul>
-    </>
-  )
+  );
 }
