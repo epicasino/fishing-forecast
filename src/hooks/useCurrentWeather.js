@@ -10,7 +10,7 @@ export default function useCurrentWeather(query) {
     getCurrentWeather(query)
       .then((data) => setWeather(data))
       .finally(() => setLoading(false));
-  }, []);
+  }, [query]);
 
   return { weather, loading };
 }

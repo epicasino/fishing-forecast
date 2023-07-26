@@ -32,6 +32,7 @@ export default function SearchBar() {
           location="location"
           placeholder="Search"
           aria-label="Search"
+          autoComplete="off"
           id="searchBar"
         />
         <button className="btn btn-outline-success" type="submit">
