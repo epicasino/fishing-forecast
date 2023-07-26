@@ -1,6 +1,6 @@
-export const getCurrentWeather = async () => {
+export const getCurrentWeather = async (query) => {
   const response = await fetch(
-    `http://localhost:3001/api/weather/today/Poway`
+    `http://localhost:3001/api/weather/today/${query}`
   ).then((data) => data.json());
   const potato = response.currentWeather.main;
   const placeName = response.currentWeather.name;
@@ -19,9 +19,9 @@ export const getCurrentWeather = async () => {
   };
 };
 
-export const getForecastWeather = async () => {
+export const getForecastWeather = async (query) => {
   const response = await fetch(
-    `http://localhost:3001/api/weather/forecast/Poway`
+    `http://localhost:3001/api/weather/forecast/${query}`
   ).then((data) => data.json());
 
   const weatherForecast = [];

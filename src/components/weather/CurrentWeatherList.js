@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import WeatherItem from "./WeatherItem";
 import useCurrentWeather from "../../hooks/useCurrentWeather";
+import { useLocation } from "react-router-dom";
 
 export default function CurrentWeatherList() {
-
+  
   const [time, setTime] = useState(null);
+  const location = useLocation();
+  const userInput = location.state;
 
   setInterval(() => {
     const currentDate = new Date().toLocaleString();
@@ -22,7 +25,7 @@ export default function CurrentWeatherList() {
     },
   };
 
-  const { weather, loading } = useCurrentWeather();
+  const { weather, loading } = useCurrentWeather(userInput);
 
   if (loading) {
     return "Loading...";
