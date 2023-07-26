@@ -1,6 +1,6 @@
 import React from "react";
 import useTide from "../../hooks/useTide";
-import TideItem from "./TideItem";
+import TideItem from "../TideItem";
 import Navbar from "../Navbar";
 
 export default function TideList() {

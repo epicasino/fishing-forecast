@@ -32,7 +32,7 @@ export default function CurrentWeatherList() {
     <div style={weatherStyles.wrapper}>
       <h1 style={weatherStyles.header}>Current Weather in {weather.name}</h1>
       <h5>{time}</h5>
-      <WeatherItem mango={weather} />
+      <WeatherItem props={weather} />
     </div>
   );
 }
