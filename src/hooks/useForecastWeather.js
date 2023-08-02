@@ -1,16 +1,16 @@
 import { useEffect, useState } from "react";
-import { getForecastWeather } from "../services/getWeather";
+import { getWeatherForecast } from '../services/weather';
 
-export default function useCurrentWeather(query) {
-  const [weather, setWeather] = useState(null);
+export default function useForecastWeather(query) {
+  const [forecastWeather, setWeather] = useState(null);
 
-  const [loading, setLoading] = useState(true);
+  const [forecastLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    getForecastWeather(query)
+    getWeatherForecast(query)
       .then((data) => setWeather(data))
       .finally(() => setLoading(false));
   }, [query]);
 
-  return { weather, loading };
+  return { forecastWeather, forecastLoading };
 }

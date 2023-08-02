@@ -1,12 +1,15 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function SearchBar() {
+  const navigate = useNavigate();
+
   const [query, setQuery] = useState('');
 
   const handleSearch = async (event) => {
     event.preventDefault();
     const formattedQuery = query.trim().split(' ').join('%20');
-    console.log(formattedQuery);
+    navigate('/weather', { state: { query: formattedQuery } });
   };
 
   return (

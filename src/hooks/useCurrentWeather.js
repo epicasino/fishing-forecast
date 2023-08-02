@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { getCurrentWeather } from "../services/weather";
 
 export default function useCurrentWeather(query) {
-  const [weather, setWeather] = useState(null);
+  const [currentWeather, setWeather] = useState(null);
 
-  const [loading, setLoading] = useState(true);
+  const [currentLoading, setLoading] = useState(true);
 
   useEffect(() => {
     getCurrentWeather(query)
@@ -12,5 +12,5 @@ export default function useCurrentWeather(query) {
       .finally(() => setLoading(false));
   }, [query]);
 
-  return { weather, loading };
+  return { currentWeather, currentLoading };
 }
