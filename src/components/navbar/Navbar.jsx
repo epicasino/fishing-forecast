@@ -3,7 +3,7 @@ import { navbarLinkArray } from './navbarLinkArray';
 
 export default function Navbar() {
 
-  console.log(navbarLinkArray);
+  // console.log(navbarLinkArray);
 
   return (
     <nav className="h-20 w-full bg-slate-900 flex justify-between items-center px-5">
