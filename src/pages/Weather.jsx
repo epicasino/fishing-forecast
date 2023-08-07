@@ -28,5 +28,5 @@ export default function Weather() {
       <CurrentWeatherCard props={currentWeather}/>
       <ForecastWeatherContainer props={forecastWeather} />
     </>
-  )
+  );
 }
