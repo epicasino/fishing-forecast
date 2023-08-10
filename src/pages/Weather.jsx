@@ -14,7 +14,7 @@ export default function Weather() {
   const {currentWeather, currentLoading} = useCurrentWeather(query);
   const {forecastWeather, forecastLoading} = useForecastWeather(query);
 
-  if (forecastLoading && currentLoading) {
+  if (forecastLoading || currentLoading) {
     return (
       <div>Loading...</div>
     )
@@ -26,7 +26,7 @@ export default function Weather() {
     <>
       <Navbar />
       <CurrentWeatherCard props={currentWeather}/>
-      <ForecastWeatherContainer props={forecastWeather} />
+      <ForecastWeatherContainer forecastWeather={forecastWeather} />
     </>
   );
 }

@@ -1,4 +1,4 @@
-const weatherKey = 'fdd47a31742f20a780b4991da19c107b';
+const weatherKey = import.meta.env.VITE_WEATHER_KEY;
 
 export const geoCode = async (input) => {
   const userInput = input.split(" ").join("%20");
