@@ -1,17 +1,17 @@
 const weatherKey = import.meta.env.VITE_WEATHER_KEY;
 
 export const geoCode = async (input) => {
-  const userInput = input.split(" ").join("%20");
+  const userInput = input.split(' ').join('%20');
   const zipCode = /^[\d{4,5}]+$/;
   let response;
 
   if (zipCode.test(userInput)) {
     response = await fetch(
-      `http://api.openweathermap.org/geo/1.0/zip?zip=${userInput},US&appid=${weatherKey}`
+      `https://api.openweathermap.org/geo/1.0/zip?zip=${userInput},US&appid=${weatherKey}`
     ).then((data) => data.json());
   } else {
     response = await fetch(
-      `http://api.openweathermap.org/geo/1.0/direct?q=${userInput},US&limit=1&appid=${weatherKey}`
+      `https://api.openweathermap.org/geo/1.0/direct?q=${userInput},US&limit=1&appid=${weatherKey}`
     )
       .then((data) => data.json())
       .then((json) => json[0]);
