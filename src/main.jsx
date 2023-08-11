@@ -7,6 +7,9 @@ import Home from './pages/Home.jsx';
 import Tides from './pages/Tides.jsx';
 import Weather from './pages/Weather.jsx';
 
+import { store } from './services/store.js';
+import { Provider } from 'react-redux';
+
 const router = createBrowserRouter([
   {
     path: '/',
@@ -30,6 +33,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );

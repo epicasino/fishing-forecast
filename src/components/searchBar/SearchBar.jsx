@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { newQuery } from '../../services/weatherSlice';
 
 export default function SearchBar() {
   const navigate = useNavigate();
 
   const [query, setQuery] = useState('');
 
+  // const userQuery = useSelector((state) => state.weather.query);
+  // console.log(userQuery);
+  const dispatch = useDispatch();
+
   const handleSearch = async (event) => {
     event.preventDefault();
     const formattedQuery = query.trim().split(' ').join('%20');
-    // console.log(formattedQuery);
+    dispatch(newQuery(formattedQuery));
     navigate('/weather', { state: { query: formattedQuery } });
   };
 
